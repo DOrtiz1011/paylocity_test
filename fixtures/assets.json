@@ -1,0 +1,50 @@
+[
+  {
+    "id": "rpt_q3_labor_cost",
+    "type": "report",
+    "owner": "team-finance",
+    "certified": true,
+    "references": [
+      { "objectId": "ds_payroll_summary", "fieldName": "gross_pay" }
+    ]
+  },
+  {
+    "id": "viz_headcount_by_dept",
+    "type": "visualization",
+    "owner": "team-people-analytics",
+    "certified": false,
+    "references": [
+      { "objectId": "ds_payroll_summary", "fieldName": "department" },
+      { "objectId": "ds_payroll_summary", "fieldName": "employee_id" }
+    ]
+  },
+  {
+    "id": "pipe_payroll_export",
+    "type": "pipeline",
+    "owner": "team-data-eng",
+    "certified": false,
+    "references": [
+      { "objectId": "ds_payroll_summary", "fieldName": "gross_pay" },
+      { "objectId": "ds_payroll_summary", "fieldName": "employee_id" },
+      { "objectId": "ds_payroll_summary", "fieldName": "hire_date" }
+    ]
+  },
+  {
+    "id": "viz_tenure_distribution",
+    "type": "visualization",
+    "owner": "team-people-analytics",
+    "certified": false,
+    "references": [
+      { "objectId": "ds_payroll_summary", "fieldName": "hire_date" }
+    ]
+  },
+  {
+    "id": "rpt_benefits_overview",
+    "type": "report",
+    "owner": "team-hr-ops",
+    "certified": true,
+    "references": [
+      { "objectId": "ds_benefits_enrollment", "fieldName": "plan_name" }
+    ]
+  }
+]

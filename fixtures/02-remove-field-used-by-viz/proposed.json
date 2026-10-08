@@ -1,0 +1,11 @@
+{
+  "id": "ds_payroll_summary",
+  "version": "DRAFT",
+  "owner": "team-payroll",
+  "approvedBy": null,
+  "fields": [
+    { "name": "employee_id", "type": "string",  "tags": ["pii"], "status": "active", "description": "Unique employee identifier" },
+    { "name": "gross_pay",   "type": "decimal", "tags": [],      "status": "active", "description": "Gross pay for the pay period" },
+    { "name": "hire_date",   "type": "date",    "tags": [],      "status": "active", "description": "Employee hire date" }
+  ]
+}

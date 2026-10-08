@@ -1,0 +1,14 @@
+{
+  "decision": "BLOCK",
+  "recommendedBump": "major",
+  "changes": [
+    { "field": "gross_pay", "changeType": "type_changed", "breaking": true }
+  ],
+  "impactedAssets": [
+    { "assetId": "rpt_q3_labor_cost", "type": "report", "owner": "team-finance", "field": "gross_pay" },
+    { "assetId": "pipe_payroll_export", "type": "pipeline", "owner": "team-data-eng", "field": "gross_pay" }
+  ],
+  "violations": [
+    { "rule": "G2", "field": "gross_pay", "blocking": true }
+  ]
+}

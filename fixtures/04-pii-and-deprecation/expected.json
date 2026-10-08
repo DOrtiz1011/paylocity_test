@@ -1,0 +1,13 @@
+{
+  "decision": "BLOCK",
+  "recommendedBump": "minor",
+  "changes": [
+    { "field": "ssn_last4", "changeType": "added", "breaking": false },
+    { "field": "hire_date", "changeType": "status_changed", "breaking": false }
+  ],
+  "impactedAssets": [],
+  "violations": [
+    { "rule": "G1", "field": "ssn_last4", "blocking": true },
+    { "rule": "G3", "field": "hire_date", "blocking": false }
+  ]
+}

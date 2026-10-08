@@ -1,0 +1,9 @@
+{
+  "decision": "ALLOW",
+  "recommendedBump": "minor",
+  "changes": [
+    { "field": "cost_center", "changeType": "added", "breaking": false }
+  ],
+  "impactedAssets": [],
+  "violations": []
+}

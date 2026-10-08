@@ -1,0 +1,11 @@
+{
+  "decision": "ALLOW_WITH_WARNINGS",
+  "recommendedBump": "major",
+  "changes": [
+    { "field": "department", "changeType": "removed", "breaking": true }
+  ],
+  "impactedAssets": [
+    { "assetId": "viz_headcount_by_dept", "type": "visualization", "owner": "team-people-analytics", "field": "department" }
+  ],
+  "violations": []
+}
