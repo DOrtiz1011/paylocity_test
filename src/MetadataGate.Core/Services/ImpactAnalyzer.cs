@@ -5,15 +5,15 @@ namespace MetadataGate.Core.Services;
 public sealed class ImpactAnalyzer : IImpactAnalyzer
 {
     public IReadOnlyList<ImpactedAsset> ComputeImpact(
-        string objectId,
+        string                     objectId,
         IReadOnlyList<FieldChange> changes,
-        IReadOnlyList<Asset> assets)
+        IReadOnlyList<Asset>       assets)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(objectId);
         ArgumentNullException.ThrowIfNull(changes);
         ArgumentNullException.ThrowIfNull(assets);
 
-        var impacted = new List<ImpactedAsset>();
+        var impacted        = new List<ImpactedAsset>();
         var breakingChanges = changes.Where(c => c.Breaking).ToList();
 
         if (breakingChanges.Count == 0 || assets.Count == 0)
@@ -26,7 +26,7 @@ public sealed class ImpactAnalyzer : IImpactAnalyzer
             foreach (var asset in assets)
             {
                 var hasMatchingReference = (asset.References ?? Array.Empty<AssetReference>())
-                    .Any(r => string.Equals(r.ObjectId, objectId, StringComparison.Ordinal)
+                    .Any(r =>    string.Equals(r.ObjectId,  objectId,     StringComparison.Ordinal)
                               && string.Equals(r.FieldName, change.Field, StringComparison.Ordinal));
 
                 if (hasMatchingReference)
