@@ -5,21 +5,21 @@ namespace MetadataGate.Core.Services;
 
 public sealed class MetadataGateEvaluator : IMetadataGateEvaluator
 {
-    private readonly IMetadataDiffer _differ;
-    private readonly IVersionBumpRecommender _bumpRecommender;
-    private readonly IImpactAnalyzer _impactAnalyzer;
+    private readonly IMetadataDiffer                _differ;
+    private readonly IVersionBumpRecommender        _bumpRecommender;
+    private readonly IImpactAnalyzer                _impactAnalyzer;
     private readonly IReadOnlyList<IGovernanceRule> _rules;
 
     public MetadataGateEvaluator(
-        IMetadataDiffer? differ = null,
-        IVersionBumpRecommender? bumpRecommender = null,
-        IImpactAnalyzer? impactAnalyzer = null,
-        IEnumerable<IGovernanceRule>? rules = null)
+        IMetadataDiffer?              differ          = null,
+        IVersionBumpRecommender?      bumpRecommender = null,
+        IImpactAnalyzer?              impactAnalyzer  = null,
+        IEnumerable<IGovernanceRule>? rules           = null)
     {
-        _differ = differ ?? new MetadataDiffer();
+        _differ          = differ          ?? new MetadataDiffer();
         _bumpRecommender = bumpRecommender ?? new VersionBumpRecommender();
-        _impactAnalyzer = impactAnalyzer ?? new ImpactAnalyzer();
-        _rules = (rules ?? new IGovernanceRule[]
+        _impactAnalyzer  = impactAnalyzer  ?? new ImpactAnalyzer();
+        _rules           = (rules          ?? new IGovernanceRule[]
         {
             new G1PiiApprovalRule(),
             new G2CertifiedImpactApprovalRule(),
@@ -27,10 +27,7 @@ public sealed class MetadataGateEvaluator : IMetadataGateEvaluator
         }).ToList();
     }
 
-    public EvaluationResult Evaluate(
-        MetadataObject current,
-        MetadataObject proposed,
-        IReadOnlyList<Asset> assets)
+    public EvaluationResult Evaluate(MetadataObject current, MetadataObject proposed, IReadOnlyList<Asset> assets)
     {
         ArgumentNullException.ThrowIfNull(current);
         ArgumentNullException.ThrowIfNull(proposed);

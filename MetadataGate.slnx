@@ -1,4 +1,25 @@
 <Solution>
+  <Folder Name="/fixtures/">
+    <File Path="fixtures/assets.json" />
+    <File Path="fixtures/current.json" />
+    <File Path="fixtures/README.md" />
+  </Folder>
+  <Folder Name="/fixtures/01-add-non-pii-field/">
+    <File Path="fixtures/01-add-non-pii-field/expected.json" />
+    <File Path="fixtures/01-add-non-pii-field/proposed.json" />
+  </Folder>
+  <Folder Name="/fixtures/02-remove-field-used-by-viz/">
+    <File Path="fixtures/02-remove-field-used-by-viz/expected.json" />
+    <File Path="fixtures/02-remove-field-used-by-viz/proposed.json" />
+  </Folder>
+  <Folder Name="/fixtures/03-type-change-certified-report/">
+    <File Path="fixtures/03-type-change-certified-report/expected.json" />
+    <File Path="fixtures/03-type-change-certified-report/proposed.json" />
+  </Folder>
+  <Folder Name="/fixtures/04-pii-and-deprecation/">
+    <File Path="fixtures/04-pii-and-deprecation/expected.json" />
+    <File Path="fixtures/04-pii-and-deprecation/proposed.json" />
+  </Folder>
   <Folder Name="/src/">
     <Project Path="src/MetadataGate.Cli/MetadataGate.Cli.csproj" />
     <Project Path="src/MetadataGate.Core/MetadataGate.Core.csproj" />
