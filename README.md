@@ -56,38 +56,35 @@ All 27 automated tests (including fixture regression tests and edge cases) will 
 
 Evaluate any scenario by providing the paths to `--current`, `--proposed`, and `--assets`:
 
+#### Fixture 01: Add non-PII field (Decision: ALLOW, Bump: minor)
+
 ```bash
-# Fixture 01: Add non-PII field (Decision: ALLOW, Bump: minor)
-dotnet run --project src/MetadataGate.Cli -- \
-  --current fixtures/current.json \
-  --proposed fixtures/01-add-non-pii-field/proposed.json \
-  --assets fixtures/assets.json
-
-# Fixture 02: Remove field used by uncertified viz (Decision: ALLOW_WITH_WARNINGS, Bump: major)
-dotnet run --project src/MetadataGate.Cli -- \
-  --current fixtures/current.json \
-  --proposed fixtures/02-remove-field-used-by-viz/proposed.json \
-  --assets fixtures/assets.json
-
-# Fixture 03: Type change affecting certified report (Decision: BLOCK, Bump: major)
-dotnet run --project src/MetadataGate.Cli -- \
-  --current fixtures/current.json \
-  --proposed fixtures/03-type-change-certified-report/proposed.json \
-  --assets fixtures/assets.json
-
-# Fixture 04: PII addition without approval & deprecation without note (Decision: BLOCK, Bump: minor)
-dotnet run --project src/MetadataGate.Cli -- \
-  --current fixtures/current.json \
-  --proposed fixtures/04-pii-and-deprecation/proposed.json \
-  --assets fixtures/assets.json
+dotnet run --project src/MetadataGate.Cli --current fixtures/current.json --proposed fixtures/01-add-non-pii-field/proposed.json --assets fixtures/assets.json
 ```
 
-Positional arguments are also supported:
+#### Fixture 02: Remove field used by uncertified viz (Decision: ALLOW_WITH_WARNINGS, Bump: major)
+
+```bash
+dotnet run --project src/MetadataGate.Cli --current fixtures/current.json --proposed fixtures/02-remove-field-used-by-viz/proposed.json --assets fixtures/assets.json
+```
+
+#### Fixture 03: Type change affecting certified report (Decision: BLOCK, Bump: major)
+
+```bash
+dotnet run --project src/MetadataGate.Cli --current fixtures/current.json --proposed fixtures/03-type-change-certified-report/proposed.json --assets fixtures/assets.json
+```
+
+#### Fixture 04: PII addition without approval & deprecation without note (Decision: BLOCK, Bump: minor)
+
+```bash
+dotnet run --project src/MetadataGate.Cli --current fixtures/current.json --proposed fixtures/04-pii-and-deprecation/proposed.json --assets fixtures/assets.json
+```
+
+#### Positional arguments are also supported:
+
 ```bash
 dotnet run --project src/MetadataGate.Cli -- fixtures/current.json fixtures/01-add-non-pii-field/proposed.json fixtures/assets.json
 ```
-
----
 
 ## CLI Options & Exit Codes
 

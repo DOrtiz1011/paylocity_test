@@ -16,8 +16,6 @@
 - **Validation Strictness**: Fields such as `approvedBy` and `deprecationNote` are checked with `!string.IsNullOrWhiteSpace(...)` to prevent whitespace-only bypasses.
 - **CLI Exit Codes**: To make the CLI production-friendly in CI/CD pipelines, `BLOCK` returns exit code `2`, whereas `ALLOW` and `ALLOW_WITH_WARNINGS` return `0` (general errors return `1`).
 
----
-
 ## 2. What I Would Build Next / With More Time
 
 1. **Multi-Hop Dependency & Lineage Graphs**: In real data platforms, pipelines output downstream datasets that feed downstream dashboards. Extending impact analysis through multi-hop DAG traversal would identify indirect breakage.
@@ -25,8 +23,6 @@
 3. **Smart Rename Detection**: Use heuristic matching (e.g. type matching + Levenshtein distance on names + description similarity) to suggest renames and generate automated SQL/dbt migration aliases.
 4. **Type Compatibility Matrix**: Distinguish widening conversions (e.g., `int` → `long` or `float` → `double`) from narrowing/breaking conversions (e.g., `string` → `int`).
 5. **REST API Endpoint**: Expose `POST /gate/evaluate` using ASP.NET Core Minimal APIs for seamless GitHub Actions / GitLab CI webhook integrations.
-
----
 
 ## 3. How AI Was Used
 

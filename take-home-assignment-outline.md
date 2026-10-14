@@ -2,8 +2,6 @@
 
 **Suggested time:** ~3–4 hours | **AI tools:** Allowed and encouraged
 
----
-
 ## 1. Context
 
 Our team builds platforms that let people author things like visualizations, reports, and pipelines on top of a shared **metadata layer**. A metadata object (for example, a dataset) describes its fields, types, ownership, and governance tags. Authors build **assets** that reference those fields, and trust that everything they need is defined in the metadata.
@@ -14,8 +12,6 @@ Metadata objects change over time. When someone publishes a new version of a dat
 2. **Is it allowed?** Does the change comply with governance rules?
 
 Your task is to build the small piece of the system that answers those questions.
-
----
 
 ## 2. The Problem
 
@@ -52,8 +48,6 @@ Pick **one**: a small HTTP API (`POST /gate/evaluate`), a CLI that reads JSON fi
 
 UI, authentication, a database, rename detection, lineage beyond one hop, multi-object dependencies, deployment.
 
----
-
 ## 3. Provided Materials
 
 - `schema.md` describing the input shapes below
@@ -82,8 +76,6 @@ UI, authentication, a database, rename detection, lineage beyond one hop, multi-
 }
 ```
 
----
-
 ## 4. Deliverables
 
 1. Working code with a README: how to run it, how to run tests
@@ -93,15 +85,11 @@ UI, authentication, a database, rename detection, lineage beyond one hop, multi-
    - What you would build next or change with more time
    - How you used AI, if you did
 
----
-
 ## 5. Guidance
 
 - Aim for roughly 3–4 hours. A clean, tested core is preferred over a sprawling solution.
 - AI assistants are welcome. You own everything you submit and should be able to explain any part of it.
 - Where the spec is ambiguous, make a reasonable choice and write it down in `NOTES.md`.
-
----
 
 ## 6. Optional Stretch
 
